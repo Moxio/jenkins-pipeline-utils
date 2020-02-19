@@ -4,7 +4,7 @@ String createTempLocation(String path) {
 	return tmpDir + File.separator + new File(path).getName()
 }
 
-def call(String scriptPath) {
+String call(String scriptPath) {
 	destPath = createTempLocation(scriptPath)
 	sh "[ -f '${destPath}' ] && rm '${destPath}' || true"
 	writeFile file: destPath, text: libraryResource(scriptPath)

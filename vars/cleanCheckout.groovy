@@ -1,4 +1,4 @@
-def call(scm) {
+void call(scm) {
 	if (scm instanceof hudson.scm.SubversionSCM) {
 		checkout(changelog: true, scm: [$class: 'SubversionSCM', locations: scm.locations as java.util.List<hudson.scm.SubversionSCM$ModuleLocation>, workspaceUpdater: [$class: 'UpdateWithCleanUpdater']])
 	} else {
